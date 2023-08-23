@@ -26,8 +26,22 @@ object bruno {
 	method correr() { pesoEnGramos -= 300}
 	method mirarNoticiero() { tieneSed = false}
 	method estaPerfecto() {return self.esFeliz() and not self.tieneSed() and self.pesoEnGramos().between(50000, 70000)}
+	method mediodiaEnCasa() { self.comerFideos() ; self.tomarAgua() ; self.mirarNoticiero()}
 }
 
 object ramiro {
+	var nivelDeContractura = 0
+	var tienePielGrasosa 
 	
+	method recibeMasajes() { nivelDeContractura = 0.max(nivelDeContractura - 2 ) }
+	method banioDeVapor() { tienePielGrasosa = false }
+	method comerBigMac() {tienePielGrasosa = true}
+	method bajarALaFosa() {tienePielGrasosa = true 
+		                   nivelDeContractura += 1
+	}
+	method jugarPaddle() {nivelDeContractura += 3}
+	method diaDeTrabajo() { self.bajarALaFosa()
+		                    self.comerBigMac()
+		                    self.bajarALaFosa()
+	}
 }
