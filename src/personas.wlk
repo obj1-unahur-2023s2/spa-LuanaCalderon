@@ -4,12 +4,13 @@ object olivia {
 	method gradoDeConentracion() = concentracion
 	method recibeMasaje() = concentracion + 3
 	method discute() = concentracion - 1
+	method banioDeVapor() { }
 	
 }
 
 
 object bruno {
-	const esFeliz = true
+	var esFeliz = true
 	var tieneSed = false
 	var pesoEnGramos = 55000 
 	
@@ -22,6 +23,7 @@ object bruno {
 	method tomarAgua() {tieneSed = false}
 	method comerFideos() { pesoEnGramos += 250
 	                       tieneSed = true }
+	method recibeMasaje() { esFeliz = true }
 	                 
 	method correr() { pesoEnGramos -= 300}
 	method mirarNoticiero() { tieneSed = false}
@@ -31,11 +33,12 @@ object bruno {
 
 object ramiro {
 	var nivelDeContractura = 0
-	var tienePielGrasosa 
+	var tienePielGrasosa = true
 	
 	method recibeMasajes() { nivelDeContractura = 0.max(nivelDeContractura - 2 ) }
+	method pielGrasosa() =  tienePielGrasosa 
 	method banioDeVapor() { tienePielGrasosa = false }
-	method comerBigMac() {tienePielGrasosa = true}
+	method comerBigMac() {return self.pielGrasosa()}
 	method bajarALaFosa() {tienePielGrasosa = true 
 		                   nivelDeContractura += 1
 	}

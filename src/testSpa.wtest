@@ -1,0 +1,23 @@
+import personas.*
+import spa.*
+
+test "olivia nace con un grado de concentracion = 6" {
+	assert.that(olivia.gradoDeConentracion() == 6) // primera forma, pero no adecuada.
+	assert.equals(6,olivia.gradoDeConentracion())
+}
+test "Bruno nace sin sed" {
+	assert.notThat(bruno.tieneSed())
+}
+
+test "Bruno tiene sed y tiene 54500 de peso si se da un baño de vapor" {
+	bruno.banioDeVapor()
+	assert.equals(54500,bruno.pesoEnGramos())
+	assert.that(bruno.tieneSed())
+}
+
+test "Ramiro tiene piel grasosa despues de una dia de trabajo" {
+	ramiro.diaDeTrabajo()
+	assert.that(ramiro.pielGrasosa()) 
+	spa.atender(ramiro)
+	assert.notThat(ramiro.pielGrasosa())
+}
